@@ -4,9 +4,9 @@ The Windows lockscreen background images are often beautiful, and so I find that
 
 To use the script, fork the repo into your Pictures folder and create a folder titled 'Output' with two folders inside titled 'Background' and 'Vertical'. Then, in your Command Prompt, navigate to the scripts folder and run
 
-'''
+```
 python convert.py YOUR_USERNAME
-'''
+```
 
 where YOUR_USERNAME is the name of the username. Make sure you are running as an administrator user, as I have not tested under a standard user. The script also requires the installation of [Pillow](https://pillow.readthedocs.io/en/stable/)
 
