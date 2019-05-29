@@ -19,32 +19,19 @@ for filename in filenames:
     try:
         im = Image.open(imageName)
         width,height = im.size
-        print(width)
+        del im
         if width == 1920:
-            os.rename(imageName,'../Output/Background/' + imageName)
-            print(imageName)
+            os.rename(imageName,'../../Output/Background/' + imageName)
+            print('Copied {}'.format(imageName[0:10]))
 
         elif height == 1920:
-            os.rename(imageName,'../Output/Vertical/' + imageName)
-            print(imageName)
+            os.rename(imageName,'../../Output/Vertical/' + imageName)
+            print('Copied {}'.format(imageName[0:10]))
         else:
-            del im
             os.remove(imageName)
 
     except FileExistsError:
-        print('File {} already exists'.format(imageName))
-    except:
+        print('File {} already exists'.format(imageName[0:10]))
+        os.remove(imageName)
+    except :
         print('File doesn\'t seem to be an image')
-
-    # im = Image.open(imageName)
-    # width,height = im.size
-    # print(width)
-    # if width == 1920:
-    #     os.rename(imageName,'../Output/Background/' + imageName)
-    #     print(imageName)
-    #
-    # elif height == 1920:
-    #     os.rename(imageName,'../Output/Vertical/' + imageName)
-    #     print(imageName)
-    # # else:
-    # #     os.remove(imageName)
